@@ -13,6 +13,7 @@
 	<script src="./assets/maugallery.js"></script>
 	<script src="./assets/scripts.js"></script>
 </head>
+
 <body>
 <div class="top-header">
 	<h3 class="name">Nina Carducci</h3>
@@ -36,7 +37,9 @@
 		</div>
 		<div class="carousel-inner">
 			<div class="carousel-item active">
-				<img src="./assets/images/slider/ryoji-iwata-wUZjnOv7t0g-unsplash.jpg" class="d-block w-100" alt="...">
+        <!-- l'img en dessous correspond au contenu principal visible au chargement LCP. L’attribut fetchpriority="high" permet d’indiquer au navigateur que cette image doit être
+        chargée en priorité afin d’améliorer le temps d’affichage et les performances LCP. -->
+				<img src="./assets/images/slider/ryoji-iwata-wUZjnOv7t0g-unsplash.jpg" class="d-block w-100" alt="..." fetchpriority="high"> 
 			</div>
 			<div class="carousel-item">
 				<img src="./assets/images/slider/nicholas-green-nPz8akkUmDI-unsplash.jpg" class="d-block w-100" alt="...">

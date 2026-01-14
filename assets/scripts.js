@@ -7,7 +7,7 @@ $(document).ready(function() {
             lg: 3,
             xl: 3
         },
-        lightBox: true,
+        lightbox: true,
         lightboxId: 'myAwesomeLightbox',
         showTags: true,
         tagsPosition: 'top'

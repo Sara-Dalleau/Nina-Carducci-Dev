@@ -150,13 +150,15 @@
 
       $(imagesCollection).each(function(i) {
         if ($(activeImage).attr("src") === $(this).attr("src")) {
-          index = i + 1 ;
+          index = i;
         }
       });
-      next =
-        imagesCollection[index] ||
-        imagesCollection[imagesCollection.length - 1];
-      $(".lightboxImage").attr("src", $(next).attr("src"));
+      let prevIndex =
+      index - 1 < 0 ? imagesCollection.length - 1 : index - 1;
+
+      let prev = imagesCollection[prevIndex];
+      $(".lightboxImage").attr("src", $(prev).attr("src"));
+
     },
     nextImage() {
       let activeImage = null;
@@ -189,11 +191,15 @@
 
       $(imagesCollection).each(function(i) {
         if ($(activeImage).attr("src") === $(this).attr("src")) {
-          index = i - 1;
+          index = i ;
         }
       });
-      next = imagesCollection[index] || imagesCollection[0];
-      $(".lightboxImage").attr("src", $(next).attr("src"));
+      let nextIndex =
+      index + 1 >= imagesCollection.length ? 0 : index + 1;
+
+      let nextImage = imagesCollection[nextIndex];
+      $(".lightboxImage").attr("src", $(nextImage).attr("src"));
+
     },
     createLightBox(gallery, lightboxId, navigation) {
       gallery.append(`<div class="modal fade" id="${
